@@ -1,0 +1,177 @@
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+
+.js-loading header:before {
+    animation: none;
+  }
+
+  .js-loading *:before, .js-loading *:after {
+    animation-play-state: pause !important;
+  }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    position: fixed;
+    transform-style: preserve-3d;
+    perspective: 100px;
+    z-index:0;
+    
+}
+
+header:before {
+    content: '';
+    background: linear-gradient(to bottom, rgba(255,0,250,0), rgba(0,0,0,0.8)), url(../img/dan.jpg) no-repeat bottom;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    animation: landing-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background: lightgray;
+    margin: 0;
+}
+
+.header-content {
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+}
+
+.header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 48%;
+    top: 20%;
+    background: goldenrod;
+    opacity: 0;
+}
+
+.header-title {
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+}
+
+.header-subtitle {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.header-section-button {
+    text-align: center;
+    margin-top: 5em;
+    opacity: 0;
+}
+
+.header-animation {
+    animation: title-down 1.6s cubic-bezier(0,.91,.3,1.22) forwards;
+}
+
+.header-img {
+    animation-delay: .8s;
+}
+
+.header-title {
+    animation-delay: 1s;
+}
+
+.header-subtitle {
+    animation-delay: 1.2s;    
+}
+
+.header-section-button {
+    animation-delay: 1.4s;
+}
+
+.header-button {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.9em;
+    font-weight: 800;
+    background-color: goldenrod;
+    height: 50px;
+    width: 100px;
+    line-height: 3em;
+    padding: .5em 1.5em;
+    border-radius: .5em;
+}
+
+.header-cross {
+    opacity: 0;
+    position: absolute;
+    bottom: 2em;
+    animation: title-down 1s 1s cubic-bezier(0,.91,.3,1.22) forwards,
+                heart 1s 1s ease-out infinite;  
+}
+
+/* ANIMACIONES */
+@keyframes landing-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes title-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes heart {
+    0%{
+        opacity: 1;
+        transform: none;
+      }
+      50%{
+        opacity: .8;
+        transform: scale(.8);
+      }
+      100%{
+        opacity: 1;
+        transform: none;
+      }
+}

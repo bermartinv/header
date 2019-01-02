@@ -1,3 +1,7 @@
+.js-loading *:before, .js-loading *:after {
+  animation-play-state: pause !important;
+}
+
 header {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -19,6 +23,10 @@ header {
   -webkit-perspective: 100px;
 
           perspective: 100px;
+}
+
+.js-loading header:before {
+  animation: none;
 }
 
 header:before {
