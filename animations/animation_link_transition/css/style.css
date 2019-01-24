@@ -32,15 +32,17 @@ article {
     transition: color .5s ease-out;
 }
 
-.content p a:hover::after{
-    right: 0;
-    border-color: #457DFB;
+.content p a:hover{
+    color: #457DFB;
+    text-decoration: none;
 }
 
-.content p a::after {
+
+
+a:after {
     content: "";
     position: absolute;
-    border-bottom: .1em solid blue;
+    border-bottom: .1em solid #2F56B0;
     left: 0;
     right: 100%;
     bottom: 0.05em;
@@ -49,7 +51,8 @@ article {
                 border-color .5s ease-out;
 }
 
-.content p a:hover{
-    color: #457DFB;
-    text-decoration: none;
+.content p a:hover::after{
+    right: 0%;
+    border-color: #457DFB;
 }
+
