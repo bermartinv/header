@@ -1,0 +1,79 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button {
+    background: none !important;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #fff;
+    padding: .5em 2em;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 5em;     
+    font-weight: 500;
+}
+
+.button::before{
+    content: "";
+    background: rgba(200,200,200,.8);
+    position: absolute;
+        top: .5em;
+        bottom: -.1em;
+        left: .1em;
+        right: .1em;
+    z-index: -1;
+}
+
+.button::after {
+    content: "";
+background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(229,198,43,1) 48%, rgba(165,127,31,1) 78%, rgba(186,28,7,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(229,198,43,1) 48%,rgba(165,127,31,1) 78%,rgba(186,28,7,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(229,198,43,1) 48%,rgba(165,127,31,1) 78%,rgba(186,28,7,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background-size: 100% 500%;
+    position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    z-index: -1;
+    transition: all 10s cubic-bezier(0,.5,.5,1);
+}
+
+.button:hover {
+    animation: heart 1s ease-out infinite;
+    text-decoration: none;
+    color: rgba(241,218,54,1);
+    transition: all 10s cubic-bezier(0,.5,.5,1);
+}
+
+.button:hover::after {
+  background-position: 0 100%;
+}
+
+.button:active {
+          animation: none;
+          transform: translateY(.2em);
+}
+
+.button:active::before {
+          transform: translateY(-.1em);
+}
+
+
+@keyframes heart {
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: scale(1.1);
+
+    }
+}
